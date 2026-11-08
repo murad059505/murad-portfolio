@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Radjabov Murad — RM</title>
+  <path d="M9 49V17H22C30 17 34 21 34 27S30 37 22 37H9M22 37L33 49" stroke="#f4f3f5" stroke-width="4.5" stroke-linejoin="round"/>
+  <path d="M34 49V17L44 33L54 17V49" stroke="#a78bfa" stroke-width="4.5" stroke-linejoin="round"/>
+  <circle cx="55" cy="7" r="3" fill="#a78bfa"/>
+</svg>

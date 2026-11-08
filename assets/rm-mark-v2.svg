@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" fill="none">
+  <title>Radjabov Murad — orbital RM monogram</title>
+  <circle cx="36" cy="36" r="27" stroke="#28282d" stroke-width="1.5"/>
+  <ellipse cx="36" cy="36" rx="34" ry="14" transform="rotate(-28 36 36)" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="64" cy="20" r="4" fill="#a78bfa"/>
+  <path d="M20 50V22M20 23H31C38 23 41.5 26 41.5 32C41.5 38 38 41 31 41H20M31 41L41 50" stroke="#f4f3f5" stroke-width="4" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M44 50V22L51 35.5L58 22V50" stroke="#a78bfa" stroke-width="4" stroke-linejoin="round"/>
+</svg>

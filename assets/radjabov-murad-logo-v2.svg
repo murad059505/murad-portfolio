@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" fill="none">
+  <title>Radjabov Murad — orbital logo</title>
+  <g transform="translate(4 4)">
+    <circle cx="32" cy="32" r="25" stroke="#28282d" stroke-width="1.5"/>
+    <ellipse cx="32" cy="32" rx="31" ry="13" transform="rotate(-28 32 32)" stroke="#a78bfa" stroke-width="1.5"/>
+    <circle cx="58" cy="17" r="3.5" fill="#a78bfa"/>
+    <path d="M17 46V19M17 20H28C34.5 20 38 23 38 28.5C38 34 34.5 37 28 37H17M28 37L38 46" stroke="#f4f3f5" stroke-width="3.8" stroke-linecap="square" stroke-linejoin="round"/>
+    <path d="M41 46V19L48 32L55 19V46" stroke="#a78bfa" stroke-width="3.8" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="84" y="32" fill="#f4f3f5" font-size="20" font-weight="700" letter-spacing="3.2">RADJABOV</text>
+    <text x="85" y="52" fill="#99999f" font-size="11" font-weight="400" letter-spacing="7.1">MURAD</text>
+  </g>
+  <path d="M85 60H274" stroke="#a78bfa" stroke-opacity=".45"/>
+  <circle cx="281" cy="60" r="2" fill="#a78bfa"/>
+</svg>

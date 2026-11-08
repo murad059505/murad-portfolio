@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="660" viewBox="0 0 660 660" fill="none">
+  <!-- Анимации внутри SVG работают и при открытии сайта с диска. -->
+  <style>
+    .planet-grid { transform-origin: 343px 333px; animation: planet-spin 36s linear infinite; }
+    .satellite { animation: planet-spin 18s linear infinite; }
+    .satellite-outer { animation: planet-spin 30s linear infinite reverse; }
+    @keyframes planet-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .planet-grid, .satellite, .satellite-outer { animation: none; }
+    }
+  </style>
+  <defs>
+    <radialGradient id="halo"><stop stop-color="#7c3aed" stop-opacity=".16"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sphere" cx=".3" cy=".2" r=".85"><stop stop-color="#d4bcff"/><stop offset=".17" stop-color="#9b6ce8"/><stop offset=".4" stop-color="#5e348c"/><stop offset=".68" stop-color="#241330"/><stop offset=".88" stop-color="#100d15"/><stop offset="1" stop-color="#392046"/></radialGradient>
+    <linearGradient id="ring" x1="150" y1="200" x2="500" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa" stop-opacity=".1"/><stop offset=".35" stop-color="#d8c3ff"/><stop offset=".65" stop-color="#9d6dde"/><stop offset="1" stop-color="#8a5ca4" stop-opacity=".2"/></linearGradient>
+    <linearGradient id="sheen" x1="250" y1="190" x2="430" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#eadfff" stop-opacity=".5"/><stop offset=".5" stop-color="#ad73ef" stop-opacity=".06"/><stop offset="1" stop-color="#c598f5" stop-opacity=".3"/></linearGradient>
+  </defs>
+  <circle cx="343" cy="333" r="310" fill="url(#halo)"/>
+  <g stroke="#a78bfa" stroke-opacity=".09"><circle cx="343" cy="333" r="245"/><circle cx="343" cy="333" r="295" stroke-dasharray="2 8"/><path d="M343 24v90m0 440v85M34 333h80m440 0h90"/></g>
+  <ellipse cx="343" cy="333" rx="261" ry="90" transform="rotate(-37 343 333)" stroke="url(#ring)" stroke-width="1.4"/>
+  <circle cx="343" cy="333" r="155" fill="url(#sphere)" stroke="url(#sheen)" stroke-width="1.5"/>
+  <g class="planet-grid" stroke="url(#sheen)" stroke-width=".65" opacity=".48"><ellipse cx="343" cy="333" rx="155" ry="49" transform="rotate(-37 343 333)"/><ellipse cx="343" cy="333" rx="155" ry="96" transform="rotate(-37 343 333)"/><ellipse cx="343" cy="333" rx="155" ry="131" transform="rotate(-37 343 333)"/><ellipse cx="343" cy="333" rx="43" ry="155" transform="rotate(-37 343 333)"/><ellipse cx="343" cy="333" rx="93" ry="155" transform="rotate(-37 343 333)"/><ellipse cx="343" cy="333" rx="133" ry="155" transform="rotate(-37 343 333)"/></g>
+  <path d="M134.5 490.1C164.4 529.8 282 491.4 397.2 404.9C512.3 318.3 581.4 215.6 551.5 175.9" stroke="url(#ring)" stroke-width="2"/>
+  <ellipse cx="343" cy="333" rx="227" ry="203" transform="rotate(27 343 333)" stroke="#ac85dd" stroke-opacity=".22" stroke-width=".8"/>
+  <g transform="translate(343 333) rotate(-37) scale(1 .3448276)">
+    <g class="satellite"><circle cx="261" cy="0" r="6" fill="#d9c3ff"/></g>
+  </g>
+  <g transform="translate(343 333) rotate(27) scale(1 .8942731)">
+    <g class="satellite-outer"><circle cx="227" cy="0" r="3" fill="#c8a6fb"/></g>
+  </g>
+  <path d="M543 494v14m-7-7h14M167 172v10m-5-5h10" stroke="#aa8cc9"/>
+</svg>
