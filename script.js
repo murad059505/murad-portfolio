@@ -10,7 +10,7 @@ siteIntro.addEventListener('animationend', (event) => {
 // Мобильное меню. Без JavaScript ссылки остаются доступными.
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
-const mobileScreen = window.matchMedia('(max-width: 480px)');
+const mobileScreen = window.matchMedia('(max-width: 600px)');
 
 function closeMenu(returnFocus = false) {
   menuButton.setAttribute('aria-expanded', 'false');
@@ -76,3 +76,4 @@ dialog.addEventListener('click', (event) => {
   if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
 });
 dialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
+
