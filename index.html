@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090B">
+  <meta name="description" content="Radjabov Murad — персональное портфолио начинающего разработчика. Дизайн, код и интерес к новому.">
+  <title>Radjabov Murad · Разработчик</title>
+  <link rel="icon" href="assets/favicon-rm-v2.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-intro" aria-hidden="true">
+    <div class="intro-orbit"><span></span></div>
+    <img class="intro-logo" src="assets/radjabov-murad-logo-v2.svg" alt="" width="300" height="72">
+    <p>ПЕРСОНАЛЬНОЕ ПОРТФОЛИО</p>
+    <div class="intro-line"><span></span></div>
+  </div>
+  <div class="shooting-stars" aria-hidden="true"><span></span><span></span><span></span></div>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="header container">
+    <a class="logo" href="#home" aria-label="Radjabov Murad — на главную"><img src="assets/radjabov-murad-logo-v2.svg" alt="Radjabov Murad" width="300" height="72"></a>
+    <button class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span></button>
+    <nav id="navigation" class="navigation" aria-label="Основная навигация">
+      <a href="#about">Обо мне</a><a href="#work">Проекты</a><a href="#contact">Контакты</a>
+    </nav>
+    <span class="header-note">ПЕРСОНАЛЬНОЕ ПОРТФОЛИО</span>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="availability hero-enter"><span class="status-dot"></span> Открыт к новым проектам</p>
+        <!-- Имя в главном заголовке. -->
+        <h1 id="hero-title" class="hero-enter">Murad<span class="name-dot">.</span></h1>
+        <p class="hero-role hero-enter">Разрабатываю <span>и</span><br class="mobile-break"> исследую цифровой мир</p>
+        <p class="hero-description hero-enter">Превращаю интерес в строки кода.<br>Создаю продуманные вещи для веба.</p>
+        <a class="button hero-enter" href="#work">Смотреть проекты</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="art-label">ИССЛЕДУЮ ВОЗМОЖНОСТИ</span>
+        <img src="assets/orbit.svg" alt="" width="660" height="660" fetchpriority="high">
+        <span class="art-coordinate">ДИЗАЙН × КОД × ЛЮБОПЫТСТВО</span>
+      </div>
+      <div class="hero-bottom"><span>СВОЙ ВЗГЛЯД. СВОБОДА ТВОРЧЕСТВА.</span><a href="#about">ЛИСТАЙТЕ ДАЛЬШЕ</a></div>
+    </section>
+
+    <section id="about" class="about section container" aria-labelledby="about-title">
+      <div class="section-label reveal"><span>01 / ОБО МНЕ</span><span class="little-star" aria-hidden="true">✳</span></div>
+      <div class="about-copy reveal">
+        <h2 id="about-title">Интерес к новому.<br>Любовь к <span class="serif">созданию.</span></h2>
+        <!-- Пример описания: расскажите здесь о себе и своих интересах. -->
+        <p>Я начинающий разработчик. Мне интересно, как чистый код сочетается с продуманным дизайном. Люблю превращать небольшие идеи в простые, полезные и немного необычные сайты.</p>
+        <p>Сейчас учусь, экспериментирую и постепенно собираю свои первые проекты. Здесь делюсь тем, что получается на этом пути.</p>
+        <div class="skills" aria-label="Технологии, которые я изучаю"><span><i class="skill-dot html-dot"></i>HTML</span><span><i class="skill-dot css-dot"></i>CSS</span><span><i class="skill-dot js-dot"></i>JavaScript</span></div>
+      </div>
+    </section>
+
+    <section id="work" class="work section container" aria-labelledby="work-title">
+      <div class="section-heading reveal"><div><p class="eyebrow">02 / ИЗБРАННЫЕ ПРОЕКТЫ</p><h2 id="work-title">Идеи обретают <span class="serif">форму.</span></h2></div><p class="section-aside">Первые концепты. Много возможностей.<br>Примеры, которые можно заменить своими.</p></div>
+      <div class="project-grid">
+        <!-- Чтобы добавить проект, скопируйте целиком article. Подробнее в README.md. -->
+        <article class="project-card reveal">
+          <button class="project-preview" type="button" data-project="orbit" aria-label="Посмотреть концепт Orbit"><img src="assets/project-orbit.svg" alt="Orbit: тёмная панель управления с фиолетовым графиком активности" width="800" height="620" loading="lazy"><span class="image-label">ВЕБ-ИНТЕРФЕЙС</span></button>
+          <div class="project-meta"><span>КОНЦЕПТ / 01</span><span>ФРОНТЕНД</span></div>
+          <h3>Orbit<span aria-hidden="true">.</span></h3><p>Спокойное пространство для идей и сосредоточенной работы. Концепт панели управления.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </article>
+        <article class="project-card reveal">
+          <button class="project-preview" type="button" data-project="forma" aria-label="Посмотреть концепт Forma"><img src="assets/project-forma.svg" alt="Forma: светлый лендинг в тёплых тонах с дизайнерским креслом" width="800" height="620" loading="lazy"><span class="image-label">ЭКСПЕРИМЕНТ С ДИЗАЙНОМ</span></button>
+          <div class="project-meta"><span>КОНЦЕПТ / 02</span><span>ВЕБ-ДИЗАЙН</span></div>
+          <h3>Forma<span aria-hidden="true">.</span></h3><p>Лендинг о красоте повседневных предметов, свободного пространства и простых форм.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span></div>
+        </article>
+        <article class="project-card reveal">
+          <button class="project-preview" type="button" data-project="wave" aria-label="Посмотреть концепт Wave"><img src="assets/project-wave.svg" alt="Wave: музыкальный плеер в зелёных тонах с абстрактной обложкой" width="800" height="620" loading="lazy"><span class="image-label">КОНЦЕПТ ИНТЕРФЕЙСА</span></button>
+          <div class="project-meta"><span>КОНЦЕПТ / 03</span><span>ТВОРЧЕСКИЙ КОД</span></div>
+          <h3>Wave<span aria-hidden="true">.</span></h3><p>Интерфейс музыкального плеера, вдохновлённый поздними вечерами, любимыми звуками и тишиной.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </article>
+      </div>
+      <p class="work-note reveal">Небольшие эксперименты. Коллекция пополняется.</p>
+    </section>
+
+    <section id="contact" class="contact section container" aria-labelledby="contact-title">
+      <div class="reveal"><p class="eyebrow">03 / ЧТО ДАЛЬШЕ?</p><p class="contact-intro">Есть идея? Давайте создадим что-нибудь интересное.</p><h2 id="contact-title">ДАВАЙТЕ<br><span class="connect-word">ОБСУДИМ</span></h2></div>
+      <!-- Замените ссылки ниже своими. Сейчас используются демонстрационные адреса. -->
+      <div class="contact-bottom reveal"><p>Буду рад идеям, совместным проектам<br>и простому «привет».</p><div class="social-links"><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="mailto:hello@example.com">Почта</a></div></div>
+      <p class="template-note">Это шаблон · Замените ссылки на контакты своими.</p>
+    </section>
+  </main>
+
+  <footer class="footer container"><a class="logo" href="#home" aria-label="Radjabov Murad — в начало страницы"><img src="assets/radjabov-murad-logo-v2.svg" alt="Radjabov Murad" width="300" height="72" loading="lazy"></a><p>© <span id="year">2026</span> Radjabov Murad. Создано с интересом.</p><a class="back-top" href="#home">В НАЧАЛО</a></footer>
+
+  <dialog class="project-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Закрыть превью проекта">×</button>
+    <img id="dialog-image" src="assets/project-orbit.svg" alt="" width="800" height="620">
+    <div class="dialog-content"><p class="eyebrow">КОНЦЕПТ ДИЗАЙНА · ДЕМОНСТРАЦИОННЫЙ ПРИМЕР</p><h2 id="dialog-title">Orbit</h2><p id="dialog-description"></p><p class="dialog-note">Это пример оформления, а не готовое приложение. Замените его своим проектом и добавьте ссылку на работающий сайт или исходный код.</p></div>
+  </dialog>
+</body>
+</html>
+
