@@ -90,7 +90,14 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 ::selection { color: var(--background); background: var(--accent); }
 img { display: block; max-width: 100%; }
 p, h1, h2, h3 { margin: 0; }
-.container { width: min(1280px, calc(100% - 112px)); margin-inline: auto; }
+.container { width: min(1420px, calc(100% - 112px)); margin-inline: auto; }
+.space-rails { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.space-rail { position: absolute; top: 108px; bottom: 68px; width: 78px; color: #a69caf70; font-size: 7px; letter-spacing: 2.1px; writing-mode: vertical-rl; text-transform: uppercase; display: flex; align-items: center; gap: 18px; }
+.space-rail-left { left: max(18px, calc((100vw - 1660px) / 2)); transform: rotate(180deg); }
+.space-rail-right { right: max(18px, calc((100vw - 1660px) / 2)); }
+.space-rail i { display: block; width: 1px; flex: 1; min-height: 70px; background: linear-gradient(transparent, #a78bfa45 18%, #a78bfa16 82%, transparent); }
+.space-rail b { color: #a78bfa8f; font: inherit; }
+.space-rail::before, .space-rail::after { content: ""; width: 4px; height: 4px; border: 1px solid #a78bfa80; border-radius: 50%; box-shadow: 0 0 12px #a78bfa75; }
 .header { height: 108px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .logo { display: inline-flex; flex-shrink: 0; align-items: center; border-radius: 4px; }
 .logo img { width: 225px; height: auto; transition: filter .25s ease; }
@@ -181,6 +188,17 @@ h2 { font-size: clamp(34px, 3.5vw, 50px); font-weight: 400; line-height: 1.14; l
 .dialog-content h2 { font-size: 34px; }.dialog-content > p:not(.eyebrow) { color: var(--muted); font-size: 13px; line-height: 1.8; margin-top: 16px; }
 .dialog-content .dialog-note { padding-top: 16px; border-top: 1px solid var(--line); }
 @media (min-width: 1600px) { .hero { min-height: 840px; } }
+@media (min-width: 1700px) {
+  body::before {
+    background:
+      radial-gradient(ellipse at 96% 35%, #8654ce20 0%, transparent 34%),
+      radial-gradient(ellipse at 4% 64%, #5940a51c 0%, transparent 33%),
+      radial-gradient(ellipse at 68% 76%, #4e38791f 0%, transparent 46%),
+      radial-gradient(ellipse at 45% 0%, #52337e14 0%, transparent 45%);
+  }
+  .hero-art { width: 54%; right: 0; }
+}
+@media (max-width: 1550px) { .space-rails { display: none; } }
 @media (max-width: 1050px) {
   .container { width: calc(100% - 64px); }.header-note { display: none; }.navigation { margin-left: 0; }
   .hero { min-height: 735px; }.hero-art { top: 100px; right: -20px; width: 55%; }.art-label { display: none; }
