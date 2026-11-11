@@ -1,44 +1,36 @@
-// Текущий год в футере обновляется автоматически.
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-// После завершения заставки удаляем её из документа.
-const siteIntro = document.querySelector('.site-intro');
-siteIntro.addEventListener('animationend', (event) => {
-  if (event.animationName === 'intro-screen') siteIntro.remove();
+const intro = document.querySelector('.site-intro');
+intro?.addEventListener('animationend', (event) => {
+  if (event.animationName === 'intro-away') intro.remove();
 });
 
-// Мобильное меню. Без JavaScript ссылки остаются доступными.
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
-const mobileScreen = window.matchMedia('(max-width: 600px)');
-
-function closeMenu(returnFocus = false) {
+function closeMenu() {
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', 'Открыть меню');
   navigation.classList.remove('is-open');
-  if (returnFocus) menuButton.focus();
 }
-
 menuButton.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.setAttribute('aria-label', isOpen ? 'Открыть меню' : 'Закрыть меню');
-  navigation.classList.toggle('is-open', !isOpen);
+  const open = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!open));
+  menuButton.setAttribute('aria-label', open ? 'Открыть меню' : 'Закрыть меню');
+  navigation.classList.toggle('is-open', !open);
 });
-navigation.addEventListener('click', (event) => {
-  if (event.target.closest('a')) closeMenu();
-});
-document.addEventListener('click', (event) => {
-  if (!event.target.closest('.header')) closeMenu();
-});
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeMenu(true);
-});
-mobileScreen.addEventListener('change', () => closeMenu());
-document.documentElement.classList.add('menu-ready');
+navigation.addEventListener('click', (event) => { if (event.target.closest('a')) closeMenu(); });
+document.addEventListener('click', (event) => { if (!event.target.closest('.header')) closeMenu(); });
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
 
-// Ненавязчивое однократное появление блоков при прокрутке.
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const progress = document.querySelector('.scroll-progress span');
+function updateProgress() {
+  const available = document.documentElement.scrollHeight - innerHeight;
+  progress.style.height = `${available > 0 ? (scrollY / available) * 100 : 0}%`;
+}
+addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 if ('IntersectionObserver' in window && !reducedMotion.matches) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -54,26 +46,28 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   });
 }
 
-// Превью берёт название, описание и изображение прямо из карточки.
-// Для настоящего проекта кнопку можно заменить ссылкой: см. README.md.
 const dialog = document.querySelector('.project-dialog');
-document.querySelectorAll('button.project-preview').forEach((button) => {
-  button.addEventListener('click', () => {
-    const card = button.closest('.project-card');
-    const image = button.querySelector('img');
-    document.querySelector('#dialog-title').textContent = card.querySelector('h3').textContent;
-    document.querySelector('#dialog-description').textContent = card.querySelector('p').textContent;
-    const previewImage = document.querySelector('#dialog-image');
-    previewImage.src = image.getAttribute('src');
-    previewImage.alt = image.alt;
-    dialog.showModal();
-    document.body.classList.add('modal-open');
-  });
+const dialogTitle = document.querySelector('#dialog-title');
+const dialogDescription = document.querySelector('#dialog-description');
+const dialogImage = document.querySelector('#dialog-image');
+function openProject(project) {
+  const image = project.querySelector('.project-image img');
+  dialogTitle.textContent = project.querySelector('h3').textContent;
+  dialogDescription.textContent = project.querySelector('.project-copy > p:not(.project-type)').textContent;
+  dialogImage.src = image.getAttribute('src');
+  dialogImage.alt = image.alt;
+  dialog.showModal();
+  document.body.classList.add('modal-open');
+}
+document.querySelectorAll('.project').forEach((project) => {
+  project.querySelector('.project-image').addEventListener('click', () => openProject(project));
+  project.querySelector('.text-button').addEventListener('click', () => openProject(project));
 });
 document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', (event) => {
-  const bounds = dialog.getBoundingClientRect();
-  if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+  const box = dialog.getBoundingClientRect();
+  const outside = event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom;
+  if (outside) dialog.close();
 });
 dialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
 
