@@ -24,3 +24,12 @@ body::before,body::after{content:"";position:fixed;inset:0;pointer-events:none;z
 @media(hover:none){.project-image:hover img{transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.site-intro{display:none}.reveal.will-reveal{opacity:1;transform:none}}
 
+/* Точечная правка композиции: заголовок не пересекается с подписью, без стрелок-символов. */
+.hero-title-wrap{z-index:3}.hero-visual{z-index:1}.hero-statement a{align-items:center}.hero-statement a::after{content:"";width:5px;height:5px;background:var(--violet);border-radius:50%;box-shadow:0 0 9px var(--violet)}
+.contact-actions{width:min(760px,100%);margin-top:70px;border-top:1px solid var(--violet)}
+.contact-actions .contact-link{width:100%;margin:0;padding:24px 0;display:grid;grid-template-columns:180px 1fr 10px;gap:30px;border-top:0;border-bottom:1px solid var(--line);font-size:inherit;transition:color .2s,padding-left .2s}
+.contact-actions .contact-link span{font-size:17px;color:var(--ink)}.contact-actions .contact-link small{color:var(--muted);font-size:11px;letter-spacing:.5px}.contact-actions .contact-link::after{content:"";width:6px;height:6px;border:1px solid var(--violet);border-radius:50%;justify-self:end}.contact-actions .contact-link:hover{color:var(--violet);padding-left:8px}.contact-actions .contact-link:hover span{color:var(--violet)}
+@media(max-width:1100px){.hero-title-wrap{margin-top:48px}.hero-index{position:static;margin-bottom:24px}.hero h1{margin-left:0}.hero-statement{left:0}.hero-visual{right:-10%;top:205px;width:55vw}}
+@media(max-width:760px){.hero-title-wrap{margin-top:48px}.hero-visual{width:420px;max-width:100%;right:-70px;top:285px}.contact-actions{margin-top:50px}.contact-actions .contact-link{grid-template-columns:90px 1fr 8px;gap:12px}.contact-actions .contact-link small{overflow-wrap:anywhere}}
+@media(max-width:420px){.hero-visual{top:300px;right:-84px}.contact-actions .contact-link{grid-template-columns:70px 1fr 8px}}
+
